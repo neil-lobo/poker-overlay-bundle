@@ -1,0 +1,72 @@
+{
+  "name": "poker",
+  "version": "0.0.0",
+  "description": "OTK poker overlay",
+  "type": "commonjs",
+  "homepage": "",
+  "author": {
+    "name": "2547techno"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "dashboardPanels": [
+      {
+        "name": "pot",
+        "title": "Pot",
+        "width": 3,
+        "file": "pot.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "player1",
+        "title": "2547techno",
+        "width": 3,
+        "file": "player1.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "player2",
+        "title": "erobb221",
+        "width": 3,
+        "file": "player2.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "player3",
+        "title": "mizkif",
+        "width": 3,
+        "file": "player3.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "player4",
+        "title": "forsen",
+        "width": 3,
+        "file": "player4.html",
+        "headerColor": "#525F78"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "license": "MIT",
+  "dependencies": {
+    "carbon-web-components": "^1.21.0"
+  }
+}

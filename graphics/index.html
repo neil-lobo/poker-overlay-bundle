@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+	<p id="rep"></p>
+
+	<script>
+		// You can access the NodeCG api anytime from the `window.nodecg` object
+		// Or just `nodecg` for short. Like this!:
+		nodecg.log.info('Here\'s an example of using NodeCG\'s logging API!');
+
+		const test = nodecg.Replicant("test", {defaultValue: "default value"})
+
+		test.on("change", (newVal, oldVal) => {
+			nodecg.log.info(`old:${oldVal} | new:${newVal}`);
+			document.getElementById("rep").innerText = newVal;
+		})
+	</script>
+</body>
+</html>
