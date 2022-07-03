@@ -58,7 +58,67 @@
     ],
     "graphics": [
       {
-        "file": "index.html",
+        "file": "player1-hand.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player1-chips-bet.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player1-chips-balance.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player2-hand.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player2-chips-bet.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player2-chips-balance.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player3-hand.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player3-chips-bet.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player3-chips-balance.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player4-hand.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player4-chips-bet.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "player4-chips-balance.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "pot.html",
         "width": 1280,
         "height": 720
       }
