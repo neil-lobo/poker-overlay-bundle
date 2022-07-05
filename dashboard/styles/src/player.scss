@@ -48,9 +48,17 @@ body {
             }
         }
 
+        #set-cards {
+            background-color: rgb(220, 255, 220);
+        }
+        
+        #clear-cards {
+            background-color: rgb(255, 220, 220);
+        }
+
         button {
             width: 100%;
-            height: 30px;
+            height: 35px;
             margin-top: 10px;
         }
     }
@@ -79,6 +87,7 @@ body {
             margin-top:10px;
             height: 35px;
             width: 100%;
+            background-color: rgb(220, 255, 220);
         }
     }
 
