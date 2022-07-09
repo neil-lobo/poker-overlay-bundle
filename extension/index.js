@@ -4,7 +4,9 @@ const Card = require("./Cards");
 const Player = require("./Player");
 
 module.exports = function (nodecg) {
-    const potRep = nodecg.Replicant("pot", {defaultValue: 0});
+    const potRep = nodecg.Replicant("pot", {defaultValue: 0, persistent: false});
+    const smallBlindRep = nodecg.Replicant("small-blind", {defaultValue: 0, persistent: false});
+    const bigBlindRep = nodecg.Replicant("big-blind", {defaultValue: 0, persistent: false});
     let pot = 0;
     let chips = {};
     let players = []
@@ -30,6 +32,15 @@ module.exports = function (nodecg) {
 
     potRep.on("change", (n, o) => {
         pot = n
+        nodecg.log.info(`pot: old: ${o} | new: ${n}`);
+    })
+    
+    smallBlindRep.on("change", (n, o) => {
+        nodecg.log.info(`small-blind: old: ${o} | new: ${n}`);
+    })
+
+    bigBlindRep.on("change", (n, o) => {
+        nodecg.log.info(`big-blind: old: ${o} | new: ${n}`);
     })
 
     nodecg.listenFor("distribute", (value, ack) => {

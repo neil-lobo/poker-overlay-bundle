@@ -28,6 +28,13 @@
         "headerColor": "#525F78"
       },
       {
+        "name": "blinds",
+        "title": "Blinds",
+        "width": 3,
+        "file": "blinds.html",
+        "headerColor": "#525F78"
+      },
+      {
         "name": "player1",
         "title": "2547techno (player1)",
         "width": 3,
