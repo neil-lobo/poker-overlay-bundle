@@ -6,8 +6,16 @@ body {
 
 button {
     cursor: pointer;
-}
+    border: black solid 1px;
 
+    &:hover {
+        filter: brightness(0.90);
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+}
 #value {
     margin-top: 5px;
 }
