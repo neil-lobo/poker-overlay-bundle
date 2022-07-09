@@ -11,7 +11,7 @@ class Player {
             persistent: false
         });
         this.hand.on("change", (newVal, oldVal) => {
-            cg.log.info(`${id}-hand: old: ${oldVal} | new:${newVal}`);
+            cg.log.info(`${id}-hand: old: ${oldVal} | new: ${newVal}`);
         })
         this.chips = cg.Replicant(`${id}-chips`, {
             defaultValue: {
@@ -21,7 +21,7 @@ class Player {
             persistent: false
         })
         this.chips.on("change", (newVal, oldVal) => {
-            cg.log.info(`${id}-chips: old: ${oldVal} | new:${newVal}`);
+            cg.log.info(`${id}-chips: old: ${oldVal} | new: ${newVal}`);
         })
     }
 
