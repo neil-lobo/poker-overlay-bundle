@@ -21,10 +21,22 @@
 		<div class="bet-container">
 			<p>Bet:</p>
 			<div class="bet-buttons">
-				<button id="minus10">-10</button>
-				<button id="plus10">+10</button>
-				<button id="plus100">+100</button>
-				<button id="plus500">+500</button>
+				<div class="blinds">
+					<button id="small-blind">
+						Small blind <br>
+						(<span class="value">+$0</span>)
+					</button>
+					<button id="big-blind">
+						Big blind <br>
+						(<span class="value">+$0</span>)
+					</button>
+				</div>
+				<div class="static">
+					<button id="minus10">-10</button>
+					<button id="plus10">+10</button>
+					<button id="plus100">+100</button>
+					<button id="plus500">+500</button>
+				</div>
 			</div>
 			<input type="number" id="bet-input" value="0">
 			<button id="set-bet">SET</button>
@@ -65,7 +77,11 @@
 		const chipsRep = nodecg.Replicant(`${playerId}-chips`);
 		let chips = {};
 		const handRep = nodecg.Replicant(`${playerId}-hand`);
-
+		const smallBlindRep = nodecg.Replicant("small-blind");
+		let smallBlind = 0;
+		const bigBlindRep = nodecg.Replicant("big-blind");
+		let bigBlind = 0;
+		
 		for(let value of values) {
 			for (let suit of suits) {
 				let option = document.createElement("option");
@@ -117,6 +133,28 @@
 			value = value.join("");
 
 			document.getElementById("card2-img").src = cardPath(suitMap[suit], value);
+		})
+
+		smallBlindRep.on("change", (n, o) => {
+			smallBlind = n;
+			let str = "";
+			if (n >= 0) {
+				str = `+$${n}`
+			} else {
+				str = `-$${Math.abs(n)}`
+			}
+			document.querySelector("#small-blind .value").innerText = str;
+		})
+
+		bigBlindRep.on("change", (n, o) => {
+			bigBlind = n;
+			let str = "";
+			if (n >= 0) {
+				str = `+$${n}`
+			} else {
+				str = `-$${Math.abs(n)}`
+			}
+			document.querySelector("#big-blind .value").innerText = str;
 		})
 
 		document.getElementById("card1").addEventListener("change", () => {
@@ -173,6 +211,16 @@
 				card1: null,
 				card2: null
 			}
+		})
+		document.getElementById("small-blind").addEventListener("click", () => {
+			let value = parseInt(document.getElementById("bet-input").value)
+			value += smallBlind;
+			document.getElementById("bet-input").value = value;
+		})
+		document.getElementById("big-blind").addEventListener("click", () => {
+			let value = parseInt(document.getElementById("bet-input").value)
+			value += bigBlind;
+			document.getElementById("bet-input").value = value;
 		})
 
 	</script>
