@@ -1,8 +1,14 @@
 #!/bin/bash
-echo $1
-if [ $# -ge 1 ]
+if [ $# -lt 1 ]
 then
-    REPLACE="s/\[\[ID\]\]/${1}/g"
-    cp player.html.template $1.html
-    sed -i $REPLACE $1.html
+    echo "No args given!"
+    exit
 fi
+
+for i in "$@"
+do
+    REPLACE="s/\[\[ID\]\]/${i}/g"
+    echo "Creating $i.html [...]"
+    cp player.html.template $i.html
+    sed -i $REPLACE $i.html
+done
