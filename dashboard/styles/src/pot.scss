@@ -4,6 +4,10 @@ body {
     align-items: center;
 }
 
+button {
+    cursor: pointer;
+}
+
 #value {
     margin-top: 5px;
 }
@@ -14,9 +18,6 @@ body {
     justify-content: center;
     align-items: center;
 
-    button {
-        cursor: pointer;
-    }
 }
 
 .selectors, .overrides {
