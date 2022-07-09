@@ -75,7 +75,7 @@ module.exports = function (nodecg) {
     nodecg.listenFor("distribute-override", (data, ack) => {
         let updatedState = {}
         for (let player of players) {
-            if (!data[player.id]) continue
+            if (data[player.id] == null) continue
 
             updatedState[player.id] = {
                 bet: 0,
@@ -84,7 +84,7 @@ module.exports = function (nodecg) {
         }
 
         for (let player of players) {
-            if (!updatedState[player.id]) continue
+            if (updatedState[player.id] == null) continue
 
             player.chips.value = updatedState[player.id]
         }
