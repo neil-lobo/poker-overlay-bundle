@@ -17,6 +17,12 @@
     "",
     "nodecg-bundle"
   ],
+  "scripts": {
+    "watchDashboard": "cd dashboard && nodemon -e html.template -C --exec \"./newPlayer.sh player1 player2 player3 player4\"",
+    "watchGraphics": "cd graphics && nodemon -e html.template -C --exec \"./newPlayer.sh player1 player2 player3 player4\"",
+    "sass": "sass dashboard/styles/src:dashboard/styles/out --watch",
+    "buildSass": "sass dashboard/styles/src:dashboard/styles/out"
+  },
   "nodecg": {
     "compatibleRange": "^1.1.1",
     "dashboardPanels": [
