@@ -157,6 +157,11 @@
 			document.querySelector("#big-blind .value").innerText = str;
 		})
 
+		nodecg.listenFor("clearInput", (value) => {
+			console.log("clear");
+			document.getElementById("bet-input").value = 0;
+		})
+
 		document.getElementById("card1").addEventListener("change", () => {
 			const value = document.getElementById("card1").value;
 			if (value.includes("♥") | value.includes("♦")) {

@@ -67,6 +67,8 @@ module.exports = function (nodecg) {
             players[i].chips.value = updatedState[i];
         }
 
+        nodecg.sendMessage("clearInput", null);
+
         ack(null, value);
     })
 
