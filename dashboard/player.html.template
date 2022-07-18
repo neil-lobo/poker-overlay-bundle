@@ -32,10 +32,10 @@
 					</button>
 				</div>
 				<div class="static">
-					<button id="minus10">-10</button>
-					<button id="plus10">+10</button>
+					<button id="plus25">+25</button>
+					<button id="plus50">+50</button>
 					<button id="plus100">+100</button>
-					<button id="plus500">+500</button>
+					<button id="allIn">All In</button>
 				</div>
 			</div>
 			<input type="number" id="bet-input" value="0">
@@ -178,14 +178,14 @@
 				document.getElementById("card2").classList.remove("red");
 			}
 		})
-		document.getElementById("minus10").addEventListener("click", () => {
+		document.getElementById("plus25").addEventListener("click", () => {
 			let value = parseInt(document.getElementById("bet-input").value)
-			value -= 10;
+			value += 25;
 			document.getElementById("bet-input").value = value;
 		})
-		document.getElementById("plus10").addEventListener("click", () => {
+		document.getElementById("plus50").addEventListener("click", () => {
 			let value = parseInt(document.getElementById("bet-input").value)
-			value += 10;
+			value += 50;
 			document.getElementById("bet-input").value = value;
 		})
 		document.getElementById("plus100").addEventListener("click", () => {
@@ -193,13 +193,14 @@
 			value += 100;
 			document.getElementById("bet-input").value = value;
 		})
-		document.getElementById("plus500").addEventListener("click", () => {
+		document.getElementById("allIn").addEventListener("click", () => {
 			let value = parseInt(document.getElementById("bet-input").value)
-			value += 500;
+			value = chips.total;
 			document.getElementById("bet-input").value = value;
 		})
 		document.getElementById("set-bet").addEventListener("click", () => {
 			let value = parseInt(document.getElementById("bet-input").value)
+			if (!value) value = 0;
 			chipsRep.value = {
 				total: chips.total,
 				bet: value
